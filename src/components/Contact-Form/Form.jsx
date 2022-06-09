@@ -1,7 +1,14 @@
 import React, { useRef } from "react";
 import "./form.css";
-import Image from "../../img/contact.png";
 import { toast } from "react-toastify";
+import {
+  Box,
+  Container,
+  Paper,
+  TextField,
+  Typography,
+  Button,
+} from "@mui/material";
 
 const Form = () => {
   const nameRef = useRef();
@@ -35,41 +42,60 @@ const Form = () => {
   };
 
   return (
-    <div className="contact">
-      <div className="contact__grid">
-        <div className="contact__img">
-          <img src={Image} alt="" />
-        </div>
-        <div className="contact__form">
-          <div className="contact__form-title mt-1">
-            <h1>Let us here your complain</h1>
-          </div>
-          <div className="contact__form-grid">
-            <div className="form__group">
-              <label htmlFor="Name">Name</label>
-              <input type="text" name="name" ref={nameRef} />
-            </div>
-            <div className="form__group">
-              <label htmlFor="email">Email</label>
-              <input type="email" name="email" ref={emailRef} />
-            </div>
-          </div>
-          <div className="form__group mt-1">
-            <label htmlFor="subject">Subject</label>
-            <input type="email" name="subject" ref={subjectRef} />
-          </div>
-          <div className="form__group mt-1">
-            <label htmlFor="message">Message</label>
-            <textarea name="message" ref={messageRef}></textarea>
-          </div>
-          <div>
-            <button className="form__btn" onClick={sendMessage}>
+    <Container maxWidth="xs">
+      <Paper sx={{ p: 2 }}>
+        <Box>
+          <Box>
+            <Typography
+              variant="h4"
+              component="h1"
+              gutterBottom
+              textAlign="center"
+            >
+              Let us here your complain
+            </Typography>
+          </Box>
+          <Box>
+            <TextField
+              type="text"
+              label="Full Name"
+              inputRef={nameRef}
+              margin="normal"
+              variant="filled"
+              fullWidth
+            />
+            <TextField
+              type="email"
+              label="Email"
+              inputRef={emailRef}
+              margin="normal"
+              variant="filled"
+              fullWidth
+            />
+            <TextField
+              type="text"
+              label="Reason for contacting us"
+              inputRef={subjectRef}
+              margin="normal"
+              variant="filled"
+              fullWidth
+            />
+            <TextField
+              type="text"
+              label="Message"
+              inputRef={messageRef}
+              margin="normal"
+              variant="filled"
+              multiline
+              fullWidth
+            />
+            <Button onClick={sendMessage} variant="contained" fullWidth>
               Send
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+            </Button>
+          </Box>
+        </Box>
+      </Paper>
+    </Container>
   );
 };
 

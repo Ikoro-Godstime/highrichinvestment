@@ -118,7 +118,7 @@ const Form = () => {
   return (
     <Box className="form">
       <Box className="form__overlay">
-        <Container maxWidth="sm" sx={{ pt: 3, pb: 12 }}>
+        <Container maxWidth="xs" sx={{ pt: 3, pb: 12 }}>
           <Paper sx={{ p: 2 }}>
             <Box
               sx={{

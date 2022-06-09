@@ -8,7 +8,7 @@ const Plan = () => {
 
   return (
     <>
-      <div className="d-flex flex-column justify-content-center align-items-center">
+      <div className="d-flex flex-column justify-content-center align-items-center mt-4">
         <div className="container d-flex flex-column justify-content-center align-items-center">
           <div className="mt-1 mb-2">
             <h1 className="text-align fw-bolder">Choose A Plan</h1>

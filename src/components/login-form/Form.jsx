@@ -97,7 +97,7 @@ const Form = () => {
 
   return (
     <Box>
-      <Container maxWidth="sm">
+      <Container maxWidth="xs">
         <Paper sx={{ p: 3 }}>
           <Box
             sx={{

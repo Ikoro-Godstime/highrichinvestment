@@ -31,6 +31,7 @@ const Navbar = () => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    p: 3,
   };
   const styleTwo = {
     display: {
@@ -84,8 +85,11 @@ const Navbar = () => {
     <React.Fragment>
       <AppBar position="static">
         <Toolbar sx={style}>
-          <Box sx={{ width: "200px" }}>
+          <Box sx={{ width: "200px", display: { xs: "none", md: "block" } }}>
             <img src="/assets/logo-white.png" alt="logo" />
+          </Box>
+          <Box sx={{ width: "78px", display: { xs: "block", md: "none" } }}>
+            <img src="/assets/logo-small.png" alt="small logo" />
           </Box>
           <Box sx={styleTwo}>
             {links.map((link) => (

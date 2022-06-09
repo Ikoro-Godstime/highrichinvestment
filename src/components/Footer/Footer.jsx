@@ -8,7 +8,7 @@ import "./footer.css";
 const Footer = () => {
   return (
     <IconContext.Provider value={{ color: "#f4f4f4", size: "2.4rem" }}>
-      <footer className="footer">
+      <footer className="footer pt-4">
         <div className="container d-flex flex-column">
           <div className="row">
             <div className="col-sm-12 col-md-6 col-lg-6 d-flex flex-column">
@@ -34,30 +34,14 @@ const Footer = () => {
             </div>
             <div className="col-sm-12 col-md-4 col-lg-4 d-flex flex-column mb-5">
               <h3>Contact Info</h3>
-              <p>info.bitpayinvestment@gmail.com</p>
+              <p>info.Quickiebooksinvestment@gmail.com</p>
               <p>Atlanta,Georgia United States</p>
             </div>
           </div>
-          {/* <div className="footer__links">
-            <div className="footer__media">
-              <a href="https://www.facebook.com">
-                <FaFacebookF />
-              </a>
-            </div>
-            <div className="footer__media">
-              <a href="https://www.twitter.com">
-                <FaTwitter />
-              </a>
-            </div>
-            <div className="footer__media">
-              <a href="https://www.instagram.com">
-                <FaInstagram />
-              </a>
-            </div>
-          </div> */}
+
           <div className="text-center mt-3">
             <p>
-              COPYRIGHT © RESVERED Bitpay 2014 -{" "}
+              COPYRIGHT © RESVERED Quickiebooks 2014 -{" "}
               {moment(new Date()).format("YYYY")}
             </p>
           </div>

@@ -10,7 +10,7 @@ const Work = () => {
         <div className="work__container">
           <div className="work__title">
             <h1 className="fw-bolder">Start Mining Live in Few Minutes</h1>
-            <p>Bitpay supports a wide Range of cryptocurrency</p>
+            <p>Quickiebooks supports a wide Range of cryptocurrency</p>
           </div>
           <div className="work__grid">
             <div className="work__card">
@@ -34,7 +34,7 @@ const Work = () => {
                 <FaExchangeAlt />
               </div>
               <div className="mt-2">
-                <h4 className="py-2 fs-5">Start Mining</h4>
+                <h4 className="py-2 fs-5">Start Earning</h4>
               </div>
             </div>
           </div>

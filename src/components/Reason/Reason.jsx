@@ -16,7 +16,7 @@ const Reason = () => {
       <div className="reason text-white">
         <div className="container d-flex flex-column">
           <div className="my-4 text-center">
-            <h1 className="fs-2 fw-bolder">Why Choose Bitpay ?</h1>
+            <h1 className="fs-2 fw-bolder">Why Choose Quickiebooks ?</h1>
             <p>
               We are combining all the key aspects of conducting an efficient
               cryptocurrency mining activity. From building a highly efficient
