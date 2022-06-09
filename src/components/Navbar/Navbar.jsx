@@ -1,76 +1,127 @@
 import React, { useState } from "react";
+import {
+  AppBar,
+  Toolbar,
+  Drawer,
+  Box,
+  Typography,
+  Button,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
-import "./navbar.css";
+import { FaBars } from "react-icons/fa";
+import { links } from "./links";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
 
-  const toggle = () => {
-    setActive(!active);
+  const openNav = () => {
+    setActive(true);
   };
+  const closeNav = () => {
+    setActive(false);
+  };
+
+  // style for flex box container
+  const style = {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  };
+  const styleTwo = {
+    display: {
+      xs: "none",
+      md: "flex",
+    },
+    justifyContent: "space-between",
+    alignItems: "center",
+  };
+
+  // drawer component
+  const list = () => {
+    return (
+      <Box sx={{ width: "200px" }}>
+        <List>
+          {links.map((link) => (
+            <Link to={link.path} key={link.id}>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemText primary={link.name} sx={{ color: "#000" }} />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+          ))}
+        </List>
+
+        <List>
+          <Link to="/register">
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemText
+                  primary={"Get Started Now !!!"}
+                  sx={{ color: "#000" }}
+                />
+              </ListItemButton>
+            </ListItem>
+          </Link>
+          <Link to="/login">
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemText primary={"Login"} sx={{ color: "#000" }} />
+              </ListItemButton>
+            </ListItem>
+          </Link>
+        </List>
+      </Box>
+    );
+  };
+
   return (
     <React.Fragment>
-      <nav>
-        <div className="container">
-          <Link to="/">
-            <div className="img-res">
-              <h1 className="title">Bitpay</h1>
-            </div>
-          </Link>
-          <div>
-            <Link to="/" className="links text-sec">
-              Home
+      <AppBar position="static">
+        <Toolbar sx={style}>
+          <Box sx={{ width: "200px" }}>
+            <img src="/assets/logo-white.png" alt="logo" />
+          </Box>
+          <Box sx={styleTwo}>
+            {links.map((link) => (
+              <Link to={link.path} key={link.id}>
+                <Typography
+                  variant="body1"
+                  component="p"
+                  sx={{ mr: 4, color: "#000" }}
+                >
+                  {link.name}
+                </Typography>
+              </Link>
+            ))}
+          </Box>
+          <Box sx={{ display: { xs: "none", md: "block" } }}>
+            <Link to="register">
+              <Button variant="contained" color="primary" sx={{ mr: 4 }}>
+                Get Started Now !!!
+              </Button>
             </Link>
-            <Link to="/about" className="links text-sec">
-              About
+            <Link to="login">
+              <Button variant="outlined" color="primary">
+                login
+              </Button>
             </Link>
-            <Link to="/contact" className="links text-sec">
-              Contact
-            </Link>
-          </div>
-          <div>
-            <Link to="/register" className="cta-1 text-sec">
-              Begin Here
-            </Link>
-            <Link to="/login" className="cta-2 text-sec">
-              Login
-            </Link>
-          </div>
-          <div className="bars">
-            {active ? (
-              <FaTimes className="bars" size="20px" onClick={toggle} />
-            ) : (
-              <FaBars className="bars" size="20px" onClick={toggle} />
-            )}
-          </div>
-        </div>
-        <div className={active ? "sidenav active" : "sidenav"}>
-          <div className="px-4 py-3 d-flex flex-column ">
-            <Link to="/" className="my-2 fs-sec w-100 text-white text-sec">
-              Home
-            </Link>
-            <Link to="/about" className="my-2  w-100 text-white text-sec">
-              About
-            </Link>
-            <Link to="/contact" className="my-2   w-100 text-white text-sec">
-              Contact
-            </Link>
-            <Link
-              to="/register"
-              className="my-2 w-100 btn btn-primary text-white text-sec "
-            >
-              Begin Here
-            </Link>
-            <Link
-              to="/login"
-              className="my-2 btn btn-outline-primary w-100 text-white text-sec"
-            >
-              Sign In
-            </Link>
-          </div>
-        </div>
-      </nav>
+          </Box>
+          <Box sx={{ display: { md: "none", xs: "block" } }}>
+            <IconButton onClick={openNav}>
+              <FaBars color="	#89CFF0" />
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <Drawer anchor="left" open={active} onClose={closeNav}>
+        {list()}
+      </Drawer>
     </React.Fragment>
   );
 };

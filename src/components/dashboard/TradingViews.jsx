@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import { AdvancedChart, TickerTape } from "react-tradingview-embed";
+import { SymbolOverview, TickerTape } from "react-tradingview-embed";
 
 const TradingViews = () => {
   // symbols to display in the Ticker Tap
@@ -38,17 +38,20 @@ const TradingViews = () => {
       </Box>
 
       <Box sx={{ mt: 4 }}>
-        <AdvancedChart
-          widgetProps={{
-            theme: "dark",
-            height: "500px",
-            allow_symbol_change: "true",
+        <SymbolOverview
+          widgetPropsAny={{
+            symbols: [
+              ["Bitcoin", "BINANCE:BTCUSDT|1D"],
+              ["Ethereum", "BINANCE:ETHUSDT|1D"],
+              ["Tether", "COINBASE:USDTUSD|12M"],
+            ],
+            autosize: true,
           }}
         />
       </Box>
       <Box sx={{ mt: 4 }}>
         <Typography variant="caption" textAlign="center">
-          Bitpay © 2022
+          Quickiebooks © 2022
         </Typography>
       </Box>
     </div>

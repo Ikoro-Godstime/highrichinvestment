@@ -8,8 +8,8 @@ const Dashboard = () => {
   return (
     <Layout>
       <Welcome />
-      <Prices />
       <TradingViews />
+      <Prices />
     </Layout>
   );
 };

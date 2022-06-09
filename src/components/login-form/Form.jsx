@@ -8,13 +8,19 @@ import {
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 
-import "./form.css";
+import {
+  Box,
+  Button,
+  Container,
+  Paper,
+  TextField,
+  Typography,
+} from "@mui/material";
 
 const Form = () => {
   // navigation
   const navigate = useNavigate();
-  // toast config
-  toast.configure();
+
   // login form Ref
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -90,47 +96,63 @@ const Form = () => {
   };
 
   return (
-    <div className="form pd">
-      <div className="form__card shadow rounded my-5 p-3">
-        <div className="form__title text-center">
-          <Link to="/" className="fs-1 fw-bolder text-main text-primary">
-            Bitpay
-          </Link>
-          <p>
-            Click here to{" "}
-            <Link to="/register" className="text-primary">
-              Create Account
-            </Link>
-          </p>
-        </div>
-        <div className="form__container my-3">
-          <div className="my-4">
-            <label htmlFor="email" className="form-label">
-              Email
-            </label>
-            <input type="email" ref={emailRef} className="form-control" />
-          </div>
-          <div className="my-4">
-            <label htmlFor="password" className="form-label">
-              Password
-            </label>
-            <input type="password" ref={passwordRef} className="form-control" />
-          </div>
-          <div className="text-left my-3">
-            <Link
-              to="/"
-              className="text-muted text-sec"
-              onClick={resetPassword}
-            >
+    <Box>
+      <Container maxWidth="sm">
+        <Paper sx={{ p: 3 }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Box sx={{ width: "80px" }}>
+              <Link to="/">
+                <img src="/assets/logo-small.png" alt="" />
+              </Link>
+            </Box>
+            <Typography variant="body1" component="p">
+              Click here to{" "}
+              <Link to="/register" className="text-primary">
+                Create Account
+              </Link>
+            </Typography>
+          </Box>
+          <Box>
+            <TextField
+              type="email"
+              label="Email"
+              variant="filled"
+              margin="normal"
+              fullWidth
+              inputRef={emailRef}
+            />
+            <TextField
+              type="password"
+              label="Password"
+              variant="filled"
+              margin="normal"
+              fullWidth
+              inputRef={passwordRef}
+            />
+
+            <Button variant="text" onClick={resetPassword} color="error">
               Forgot Password
-            </Link>
-          </div>
-          <button className="btn btn-primary btn-block" onClick={loginUser}>
-            Login
-          </button>
-        </div>
-      </div>
-    </div>
+            </Button>
+            <Button
+              onClick={loginUser}
+              variant="contained"
+              color="primary"
+              fullWidth
+              sx={{ mt: 1, mb: 2 }}
+            >
+              Login
+            </Button>
+          </Box>
+        </Paper>
+      </Container>
+    </Box>
   );
 };
 

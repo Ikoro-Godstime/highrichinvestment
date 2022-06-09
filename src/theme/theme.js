@@ -1,39 +1,54 @@
 import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
+  typography: {
+    fontFamily: ["Josefin Sans", "sans-serif"].join(","),
+  },
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#fff",
+        },
+      },
+      defaultProps: {
+        elevation: false,
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "capitalize",
+        },
+      },
+      defaultProps: {
+        disableElevation: true,
+      },
+    },
+  },
+});
+
+export const themeTwo = createTheme({
   palette: {
     mode: "dark",
     background: {
-      default: "#0a1929",
-      paper: "#001e3c",
+      paper: "#131722",
+      default: "#131722",
     },
   },
   typography: {
-    subtitle1: {
-      fontFamily: ["Josefin Sans", "sans-serif"].join(","),
-    },
-    body1: {
-      fontFamily: ["Josefin Sans", "sans-serif"].join(","),
-    },
-    h6: {
-      fontFamily: ["Nunito", "sans-serif"].join(","),
-    },
-    h5: {
-      fontFamily: ["Nunito", "sans-serif"].join(","),
-    },
-    h3: {
-      fontFamily: ["Nunito", "sans-serif"].join(","),
-    },
-    h4: {
-      fontFamily: ["Nunito", "sans-serif"].join(","),
-      fontWeight: "bolder",
-    },
-    caption: {
-      fontFamily: ["Nunito", "sans-serif"].join(","),
-    },
-    button: {
-      fontFamily: ["Josefin Sans", "sans-serif"].join(","),
-      textTransform: "lowercase",
+    fontFamily: ["Josefin Sans", "sans-serif"].join(","),
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "capitalize",
+        },
+      },
+      defaultProps: {
+        disableElevation: true,
+      },
     },
   },
 });

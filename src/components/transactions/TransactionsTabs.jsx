@@ -18,7 +18,7 @@ const Panel = (props) => {
 const TransactionTabs = () => {
   const [index, setIndex] = useState(0);
 
-  const onIndexChange = (event, indexValue) => {
+  const onIndexChange = (indexValue) => {
     setIndex(indexValue);
   };
 
@@ -45,7 +45,7 @@ const TransactionTabs = () => {
       </Panel>
       <Box sx={{ mt: 10 }}>
         <Typography variant="caption">
-          All Rights Reserved © Bitpay 2022
+          All Rights Reserved © Quickiebooks 2022
         </Typography>
       </Box>
     </Box>

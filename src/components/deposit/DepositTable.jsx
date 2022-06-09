@@ -55,7 +55,7 @@ const DepositTable = () => {
   return (
     <TableContainer component={Paper} sx={{ mt: 6 }}>
       {deposits.length > 0 ? (
-        <Table sx={{ minWidth: 400 }} aria-label="simple table">
+        <Table aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>Amount</TableCell>
