@@ -94,19 +94,6 @@ const Withdrawal = () => {
                       {option.name}
                     </Typography>
                   </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      mb: 2,
-                      mt: 2,
-                    }}
-                  >
-                    <Typography variant="body1">Minimum Amount</Typography>
-                    <Typography variant="subtitle1">
-                      {option.minAmount}
-                    </Typography>
-                  </Box>
                   <Box sx={{ mt: 4 }}>
                     <Button
                       variant="contained"
