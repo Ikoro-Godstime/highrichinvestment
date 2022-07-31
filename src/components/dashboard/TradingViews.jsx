@@ -51,7 +51,7 @@ const TradingViews = () => {
       </Box>
       <Box sx={{ mt: 4 }}>
         <Typography variant="caption" textAlign="center">
-          Quickiebooks © 2022
+          High rich investment © 2022
         </Typography>
       </Box>
     </div>

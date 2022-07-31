@@ -7,12 +7,12 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDqFkM_yPaWt0z8Df_31OoZ-iqd67X8naI",
-  authDomain: "quickiebooks-8800f.firebaseapp.com",
-  projectId: "quickiebooks-8800f",
-  storageBucket: "quickiebooks-8800f.appspot.com",
-  messagingSenderId: "463818993905",
-  appId: "1:463818993905:web:25b9431d9b5a1e4e5db950",
+  apiKey: "AIzaSyBYc95m2VCCIToRb90cI5lQGV2vYncX8ng",
+  authDomain: "highrichinvestment.firebaseapp.com",
+  projectId: "highrichinvestment",
+  storageBucket: "highrichinvestment.appspot.com",
+  messagingSenderId: "922428872752",
+  appId: "1:922428872752:web:e349e22bce4abe6a63b5f5",
 };
 
 // Initialize Firebase

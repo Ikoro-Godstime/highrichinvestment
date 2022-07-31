@@ -8,20 +8,20 @@ export const plans = [
   {
     title: "Bronze",
     Duration: "3-7 days",
-    price: "$1,000-$5,000",
-    min: "5000",
+    price: "$100-$1,000",
+    min: "100",
   },
   {
     title: "Sliver",
     Duration: "3-7 days",
-    price: "$5,000-$10,000",
-    min: "10000",
+    price: "$1,000-$10,000",
+    min: "1000",
   },
   {
     title: "Gold",
     Duration: "14-28 days",
     price: "$10,000-$100,000",
-    min: "100000",
+    min: "10000",
   },
   {
     title: "Platinum",

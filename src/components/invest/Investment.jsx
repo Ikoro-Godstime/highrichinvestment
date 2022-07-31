@@ -22,7 +22,7 @@ const Investment = () => {
       const balanceAmount = userDetails.data().balance;
       const depositedAmount = userDetails.data().deposited;
       const totalPackages = userDetails.data().totalPackages;
-      console.log({ balanceAmount, depositedAmount, totalPackages });
+
       if ((amount > balanceAmount) | (amount > depositedAmount)) {
         toast.error("insufficent Fund", {
           theme: "colored",

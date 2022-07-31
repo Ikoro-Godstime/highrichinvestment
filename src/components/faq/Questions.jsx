@@ -52,15 +52,15 @@ const Questions = () => {
         </Accordion.Item>
         <Accordion.Item eventKey="4">
           <Accordion.Header>
-            How does Quickiebooks Insurance work and how does it protect miners
-            assets and machines?
+            How does High rich investment Insurance work and how does it protect
+            miners assets and machines?
           </Accordion.Header>
           <Accordion.Body className="text-sec">
             The insurance has a lite token fee and covers everything including
             fees, it gives you 20% of any fee or deposit. The insurance earns
             you tokens that are paid and the application is flexible to enable
             every miner have full access to this funds and take care of his/her
-            Quickiebooks maintenance.
+            High rich investment maintenance.
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>

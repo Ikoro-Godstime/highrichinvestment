@@ -39,11 +39,10 @@ const Hero = () => {
               gutterBottom
               sx={{ textAlign: { xs: "center", md: "left" } }}
             >
-              Quickiebooks Trading Signals is a group of financial and
-              cryptocurrency experts that invest in mining and cryptocurrency
-              trading. We carefully examine the volatility of bitcoin and other
-              crypto currencies, invest and make good profit from our
-              investments.
+              High Rich Investment is a group of financial and cryptocurrency
+              experts that invest in mining and cryptocurrency trading. We
+              carefully examine the volatility of bitcoin and other crypto
+              currencies, invest and make good profit from our investments.
             </Typography>
             <Link to="/register">
               <Button variant="outlined" color="primary" size="large">

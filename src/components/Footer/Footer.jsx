@@ -34,14 +34,14 @@ const Footer = () => {
             </div>
             <div className="col-sm-12 col-md-4 col-lg-4 d-flex flex-column mb-5">
               <h3>Contact Info</h3>
-              <p>info.Quickiebooksinvestment@gmail.com</p>
+              <p>info.highrichinvestment@gmail.com</p>
               <p>Atlanta,Georgia United States</p>
             </div>
           </div>
 
           <div className="text-center mt-3">
             <p>
-              COPYRIGHT © RESVERED Quickiebooks 2014 -{" "}
+              COPYRIGHT © RESVERED High rich investment 2014 -{" "}
               {moment(new Date()).format("YYYY")}
             </p>
           </div>

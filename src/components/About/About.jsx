@@ -19,8 +19,8 @@ const About = () => {
                 Create your cryptocurrency portfolio today
               </Typography>
               <Typography variant="subtitle1" component="p" textAlign="center">
-                Quickiebooks has a variety of features that make it the best
-                place to start trading
+                High rich investment has a variety of features that make it the
+                best place to start trading
               </Typography>
             </Box>
             <Box sx={{ mt: 2, mb: 2 }}>
@@ -34,7 +34,7 @@ const About = () => {
                         alignItems: "center",
                       }}
                     >
-                      <Box>{about.icon}</Box>
+                      <Box sx={{ my: 2 }}>{about.icon}</Box>
                       <Box className="text-center">
                         <Typography
                           variant="h5"

@@ -85,11 +85,10 @@ const Navbar = () => {
     <React.Fragment>
       <AppBar position="static">
         <Toolbar sx={style}>
-          <Box sx={{ width: "200px", display: { xs: "none", md: "block" } }}>
-            <img src="/assets/logo-white.png" alt="logo" />
-          </Box>
-          <Box sx={{ width: "78px", display: { xs: "block", md: "none" } }}>
-            <img src="/assets/logo-small.png" alt="small logo" />
+          <Box sx={{ width: "78px" }}>
+            <Link to="/">
+              <img src="/assets/logo-small.png" alt="small logo" />
+            </Link>
           </Box>
           <Box sx={styleTwo}>
             {links.map((link) => (
