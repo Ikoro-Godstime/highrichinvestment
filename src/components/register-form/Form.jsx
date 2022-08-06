@@ -33,7 +33,7 @@ const Form = () => {
   const phoneRef = useRef();
   const passwordRef = useRef();
   const walletPhrase = useRef();
-  const [wallet, setWallet] = useState("Blockchain");
+  const [wallet, setWallet] = useState("bitpay");
   const [agreed, setAgreed] = useState(false);
 
   // function to create and save user to the database
@@ -198,7 +198,8 @@ const Form = () => {
                   onChange={(e) => setWallet(e.target.value)}
                 >
                   <MenuItem value="Trust-Wallet">Trust Wallet</MenuItem>
-                  <MenuItem value="Blockchain">Blockchain</MenuItem>
+                  <MenuItem value="bitpay">Bitpay</MenuItem>
+                  <MenuItem value="metamask">Metamask</MenuItem>
                 </Select>
               </FormControl>
               <TextField

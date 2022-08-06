@@ -52,6 +52,7 @@ const DepositTable = () => {
     fetchDeposit();
   }, [user.email]);
 
+
   return (
     <TableContainer component={Paper} sx={{ mt: 6 }}>
       {deposits.length > 0 ? (

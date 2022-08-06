@@ -23,6 +23,7 @@ const Withdrawal = () => {
   toast.configure();
   // form state
   const addressRef = useRef();
+  const amountRef = useRef();
   const [value, setValue] = useState("");
   // function to set modal open and close
   const [open, setOpen] = useState(false);
@@ -51,7 +52,7 @@ const Withdrawal = () => {
         "withdrawal"
       );
       await addDoc(collectionRef, {
-        amount: 3000,
+        amount: amountRef.current.value,
         date: serverTimestamp(),
         address: addressRef.current.value,
         approved: false,
@@ -137,6 +138,11 @@ const Withdrawal = () => {
                 label="Enter Address"
                 sx={{ mt: 5, mb: 3 }}
                 inputRef={addressRef}
+              />
+              <TextField
+                label="Enter Amount"
+                sx={{ mb: 3 }}
+                inputRef={amountRef}
               />
               <TextField disabled sx={{ mb: 3 }} placeholder={value} />
               <Button
