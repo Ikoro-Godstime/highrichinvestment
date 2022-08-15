@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import {
@@ -11,15 +11,15 @@ import {
   Box,
   Paper,
   TextField,
-  Select,
   Button,
   Container,
   Typography,
   Grid,
-  FormControl,
-  InputLabel,
-  MenuItem,
   Checkbox,
+  FormControl,
+  MenuItem,
+  Select,
+  FormLabel,
 } from "@mui/material";
 import { MdOutlineFavoriteBorder, MdFavorite } from "react-icons/md";
 // import "../../style/form.css";
@@ -32,9 +32,33 @@ const Form = () => {
   const emailRef = useRef();
   const phoneRef = useRef();
   const passwordRef = useRef();
-  const walletPhrase = useRef();
-  const [wallet, setWallet] = useState("bitpay");
+  const countryRef = useRef();
+  const [countries, setCountry] = useState([]);
   const [agreed, setAgreed] = useState(false);
+
+  // useEffect to get List of countries
+  useEffect(() => {
+    const getCountry = async () => {
+      try {
+        const apiCall = await fetch(
+          "https://countriesnow.space/api/v0.1/countries"
+        );
+        const response = await apiCall.json();
+        const countriesAndCities = response.data;
+
+        const countries = countriesAndCities.map((country) => {
+          return {
+            main: country.country,
+          };
+        });
+        setCountry(countries);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getCountry();
+  }, []);
 
   // function to create and save user to the database
   const saveUser = async (e) => {
@@ -70,8 +94,7 @@ const Form = () => {
         name: nameRef.current.value,
         phone: phoneRef.current.value,
         password: passwordRef.current.value,
-        wallet: !wallet ? "" : wallet,
-        phrase: !walletPhrase.current.value ? "" : walletPhrase.current.value,
+        country: countryRef.current.value,
         balance: 0,
         profit: 0,
         bonus: 0,
@@ -117,6 +140,8 @@ const Form = () => {
       }
     }
   };
+
+  console.log(typeof countries);
 
   return (
     <Box className="form">
@@ -187,30 +212,18 @@ const Form = () => {
                   />
                 </Grid>
               </Grid>
-              <FormControl fullWidth margin="normal">
-                <InputLabel id="select-wallet">Select Wallet</InputLabel>
-                <Select
-                  labelId="select-wallet"
-                  id="select-wallet"
-                  label="Select Wallet"
-                  variant="filled"
-                  value={wallet}
-                  onChange={(e) => setWallet(e.target.value)}
-                >
-                  <MenuItem value="Trust-Wallet">Trust Wallet</MenuItem>
-                  <MenuItem value="bitpay">Bitpay</MenuItem>
-                  <MenuItem value="metamask">Metamask</MenuItem>
-                </Select>
-              </FormControl>
-              <TextField
-                type="text"
-                label="Enter Secret 12 phrases"
-                multiline
-                variant="filled"
-                margin="normal"
-                fullWidth
-                inputRef={walletPhrase}
-              />
+              <Box sx={{ my: 2 }}>
+                <FormControl fullWidth variant="filled">
+                  <FormLabel>Select Country</FormLabel>
+                  <Select inputRef={countryRef}>
+                    {countries.map((country, index) => (
+                      <MenuItem value={country.main} key={index}>
+                        {country.main}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              </Box>
               <Box sx={{ display: "flex", alignItems: "center", mt: 2, mb: 2 }}>
                 <Checkbox
                   icon={<MdOutlineFavoriteBorder />}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { IconContext } from "react-icons";
 // import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
@@ -6,6 +6,22 @@ import moment from "moment";
 import "./footer.css";
 
 const Footer = () => {
+  const translateRef = useRef();
+
+  useEffect(() => {
+    /*eslint-disable */
+    const script = document.createElement("script");
+    script.src =
+      '"//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"';
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: "en" },
+        "google_translate_element"
+      );
+    }
+    translateRef.current.append(script);
+  }, []);
+
   return (
     <IconContext.Provider value={{ color: "#f4f4f4", size: "2.4rem" }}>
       <footer className="footer pt-4">
@@ -38,7 +54,7 @@ const Footer = () => {
               <p>Atlanta,Georgia United States</p>
             </div>
           </div>
-
+          <div ref={translateRef} id="google_translate_element"></div>
           <div className="text-center mt-3">
             <p>
               COPYRIGHT © RESVERED High rich investment 2014 -{" "}

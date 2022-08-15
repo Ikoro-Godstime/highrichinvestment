@@ -9,6 +9,8 @@ import Reason from "../components/Reason/Reason";
 import Start from "../components/Start/Start";
 import Work from "../components/Work/Work";
 import Plan from "../components/Plan/Plan";
+import Marquees from "../components/marquees/Marquees";
+import Certificate from "../components/certificates/Certificate";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -35,7 +37,9 @@ const Home = () => {
   return (
     <React.Fragment>
       <Header />
+      <Marquees />
       <About />
+      <Certificate />
       <Start />
       <Work />
       <Reason />
