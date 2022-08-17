@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
-import certificate from "../../img/certificate.JPG";
+import certificate from "../../img/cert2.JPG";
 
 const Certificate = () => {
   return (
@@ -18,7 +18,7 @@ const Certificate = () => {
           Company Number
         </Typography>
         <Typography variant="h4" color="primary" sx={{ fontWeight: "bold" }}>
-          ISO 9001:2015
+          7646643562
         </Typography>
       </Box>
       <Box sx={{ mt: 6, width: "70%", mx: "auto" }}>
