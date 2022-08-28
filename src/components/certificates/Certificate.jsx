@@ -18,7 +18,7 @@ const Certificate = () => {
           Company Number
         </Typography>
         <Typography variant="h4" color="primary" sx={{ fontWeight: "bold" }}>
-          7646643562
+          ISO 9001:2015
         </Typography>
       </Box>
       <Box sx={{ mt: 6, width: "70%", mx: "auto" }}>
