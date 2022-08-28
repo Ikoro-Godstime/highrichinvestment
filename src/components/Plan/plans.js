@@ -2,7 +2,7 @@ export const plans = [
   {
     title: "BIOMASS",
     Duration: "24hrs",
-    price: "$50-$5,000",
+    price: "$100-$5,000",
     min: "50",
     roi: "7%",
   },
